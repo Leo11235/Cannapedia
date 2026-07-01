@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Category: {{ category }}{% endblock %}
+{% block content %}
+<div class="cp-category-page">
+  <h1>Category: {{ category }}</h1>
+  <p class="cp-shortdesc">{{ category_articles|length }} article{{ "s" if category_articles|length != 1 else "" }} in this category.</p>
+  <ul class="cp-article-list">
+  {% for a in category_articles %}
+    <li>
+      <a href="/wiki/{{ a.slug }}/"><strong>{{ a.title }}</strong></a>
+      <p>{{ a.short_description }}</p>
+    </li>
+  {% endfor %}
+  </ul>
+  <p><a href="/">&larr; Back to Main page</a></p>
+</div>
+{% endblock %}

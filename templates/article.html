@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block meta_description %}{{ article.short_description or article.title }}{% endblock %}
+{% block content %}
+<article class="cp-article">
+  <h1>{{ article.title }}</h1>
+  {% if article.short_description %}
+  <p class="cp-shortdesc">{{ article.short_description }}</p>
+  {% endif %}
+
+  <aside class="cp-rail">
+    {% if article.infobox %}
+    <table class="cp-infobox">
+      <tr><th colspan="2" class="cp-infobox-title">{{ article.infobox_title or article.title }}</th></tr>
+      {% if article.image %}
+      <tr><td colspan="2" class="cp-infobox-image"><img src="{{ article.image }}" alt="{{ article.title }}"></td></tr>
+      {% else %}
+      <tr><td colspan="2" class="cp-infobox-image">
+        <div class="cp-image-placeholder cp-image-placeholder-square" aria-hidden="true">
+          <span class="cp-image-placeholder-icon">&#128247;</span>
+          <span class="cp-image-placeholder-label">Lead image needed</span>
+        </div>
+      </td></tr>
+      {% endif %}
+      {% for row in article.infobox %}
+      <tr><th>{{ row[0] }}</th><td>{{ row[1] }}</td></tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+
+    {% for w in article.widgets %}
+    <div class="cp-widget cp-widget-{{ w.type }}">
+      <div class="cp-widget-title">{{ w.title }}</div>
+      {% if w.type == "trivia" %}
+      <ul class="cp-widget-list">
+        {% for item in w.items %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+      {% elif w.type == "timeline" %}
+      <table class="cp-widget-timeline">
+        {% for row in w.items %}
+        <tr><th>{{ row[0] }}</th><td>{{ row[1] }}</td></tr>
+        {% endfor %}
+      </table>
+      {% elif w.type == "related" %}
+      <ul class="cp-widget-list cp-widget-related">
+        {% for r in w.resolved_items %}
+        <li><a href="/wiki/{{ r.slug }}/">{{ r.title }}</a>{% if r.short_description %}<span class="cp-widget-related-desc">{{ r.short_description }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+      {% elif w.type == "quote" %}
+      <blockquote class="cp-widget-quote">&ldquo;{{ w.text }}&rdquo;<footer>&mdash; {{ w.attribution }}</footer></blockquote>
+      {% elif w.type == "factbox" %}
+      <table class="cp-widget-timeline">
+        {% for row in w.items %}
+        <tr><th>{{ row[0] }}</th><td>{{ row[1] }}</td></tr>
+        {% endfor %}
+      </table>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </aside>
+
+  <div class="cp-meta">
+    <span class="cp-status-badge">{{ article.status }}</span>
+    <span class="cp-meta-sep">&middot;</span>
+    {{ article.word_count }} words
+    <span class="cp-meta-sep">&middot;</span>
+    ~{{ article.reading_minutes }} min read
+  </div>
+
+  {% if article.toc_html %}
+  <div class="cp-toc">
+    <div class="cp-toc-title">Contents</div>
+    {{ article.toc_html|safe }}
+  </div>
+  {% endif %}
+
+  <div class="cp-article-body">
+    {{ article.html|safe }}
+  </div>
+
+  {% if article.categories %}
+  <div class="cp-categories">
+    <strong>Categories:</strong>
+    {% for c in article.categories %}<a href="/category/{{ c|cslug }}/">{{ c }}</a>{% if not loop.last %} &middot; {% endif %}{% endfor %}
+  </div>
+  {% endif %}
+
+  <p class="cp-lastedited">This page was last edited on {{ article.last_updated or build_date }}.</p>
+</article>
+{% endblock %}

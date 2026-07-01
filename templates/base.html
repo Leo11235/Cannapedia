@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Cannapedia{% endblock %} - Cannapedia</title>
+<meta name="description" content="{% block meta_description %}Cannapedia, the free encyclopedia about cannabis history, science, culture, and people.{% endblock %}">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<div class="cp-shell">
+  <header class="cp-header">
+    <div class="cp-header-inner">
+      <a class="cp-logo" href="/">
+        <span class="cp-logo-mark" aria-hidden="true">&#127807;</span>
+        <span class="cp-logo-text">Cannapedia<br><small>The Free Cannabis Encyclopedia</small></span>
+      </a>
+      <div class="cp-search" id="cp-search">
+        <input id="cp-search-input" type="text" placeholder="Search Cannapedia" autocomplete="off">
+        <div id="cp-search-results" class="cp-search-results" hidden></div>
+      </div>
+      <a class="cp-random" href="#" id="cp-random-link" title="Go to a random article">Random article</a>
+    </div>
+  </header>
+  <div class="cp-body">
+    <nav class="cp-sidebar">
+      <div class="cp-nav-group">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="/">Main page</a></li>
+          <li><a href="#" id="cp-random-link-2">Random article</a></li>
+          <li><a href="/#categories">All categories</a></li>
+          <li><a href="/about/">About Cannapedia</a></li>
+        </ul>
+      </div>
+      <div class="cp-nav-group">
+        <h3>Categories ({{ categories|length }})</h3>
+        <ul>
+        {% for c in categories %}
+          <li><a href="/category/{{ c|cslug }}/">{{ c }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="cp-nav-group cp-stats">
+        <h3>Cannapedia stats</h3>
+        <ul>
+          <li>{{ site_article_count }} article{{ "s" if site_article_count != 1 else "" }}</li>
+          <li>Last built {{ build_date }}</li>
+        </ul>
+      </div>
+    </nav>
+    <main class="cp-main">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+  <footer class="cp-footer">
+    <p>Cannapedia is a demonstration encyclopedia project about cannabis &mdash; built for educational purposes. It is not affiliated with Wikipedia or the Wikimedia Foundation. Text is adapted from cited public sources; see each article's References section.</p>
+  </footer>
+</div>
+<script src="/static/js/search.js" defer></script>
+</body>
+</html>

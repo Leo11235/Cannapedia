@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Main Page{% endblock %}
+{% block content %}
+<div class="cp-home">
+  <h1>Welcome to Cannapedia</h1>
+  <p class="cp-home-intro">
+    The free encyclopedia about cannabis &mdash; covering its archaeology and history,
+    botany and science, medicine, law, culture, and the people who shaped it &mdash;
+    that anyone with knowledge could help build.
+    Cannapedia currently hosts <strong>{{ site_article_count }}</strong>
+    article{{ "s" if site_article_count != 1 else "" }}.
+  </p>
+
+  <h2>Featured articles</h2>
+  <ul class="cp-article-list">
+  {% for a in all_articles %}
+    <li>
+      <a href="/wiki/{{ a.slug }}/"><strong>{{ a.title }}</strong></a>
+      <p>{{ a.short_description }}</p>
+      <p class="cp-article-list-meta">
+        {% for c in a.categories %}<a href="/category/{{ c|cslug }}/">{{ c }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+        &middot; ~{{ a.reading_minutes }} min read
+      </p>
+    </li>
+  {% endfor %}
+  </ul>
+
+  <h2 id="categories">Browse by category</h2>
+  <ul class="cp-category-list">
+  {% for c in categories %}
+    <li><a href="/category/{{ c|cslug }}/">{{ c }}</a></li>
+  {% endfor %}
+  </ul>
+
+  <h2>About this project</h2>
+  <p>
+    Cannapedia is built as a small, dependency-light static site: articles are
+    plain Markdown files with structured metadata, rendered into clean HTML.
+    Read more on the <a href="/about/">About Cannapedia</a> page.
+  </p>
+</div>
+{% endblock %}
