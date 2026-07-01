@@ -1,0 +1,2 @@
+# Cannapedia
+The cannabis encyclopedia
