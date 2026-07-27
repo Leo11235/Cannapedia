@@ -9,23 +9,72 @@ categories:
   - Science and medicine
 status: "Featured article"
 last_updated: "2026-07-01"
-infobox_title: "History of Cannabis — Overview"
+infobox_title: "History of Cannabis, Overview"
 infobox:
-  - ["Earliest fiber use", "~12,000 years before present, Yuan-shan culture, present-day Taiwan/China"]
-  - ["Earliest confirmed psychoactive use", "c. 500 BCE, Jirzankal Cemetery, Pamir Mountains, western China"]
-  - ["Earliest written reference (medical)", "c. 2700 BCE (traditionally dated), Chinese pharmacopeia attributed to Shennong"]
-  - ["Earliest religious text reference", "c. 1500–1000 BCE, Atharvaveda, India"]
-  - ["Introduced to Western medicine", "1839–1842, W. B. O'Shaughnessy, Calcutta and London"]
-  - ["THC isolated and its structure determined", "1964, Raphael Mechoulam, Yehiel Gaoni and Haviv Edery, Weizmann Institute, Israel"]
-  - ["U.S. federal prohibition begins", "1937, Marihuana Tax Act"]
-  - ["Cannabis placed in U.S. Schedule I", "1970, Controlled Substances Act"]
-  - ["First jurisdiction to fully legalize", "2013, Uruguay"]
-  - ["First U.S. states to legalize recreational use", "2012, Colorado and Washington"]
-short_description_long: ""
+  - label: "Earliest fiber use"
+    value: "~12,000 years before present, Yuan-shan culture, present-day Taiwan/China"
+  - label: "Earliest confirmed psychoactive use"
+    value: "c. 500 BCE, Jirzankal Cemetery, Pamir Mountains, western China"
+  - label: "Earliest written reference (medical)"
+    value: "c. 100 CE, Chinese pharmacopeia attributed to Shennong"
+  - label: "Earliest religious text reference"
+    value: "c. 1500 to 1000 BCE, Atharvaveda, India"
+  - label: "Introduced to Western medicine"
+    value: "1839 to 1842, W. B. O'Shaughnessy, Calcutta and London"
+  - label: "THC isolated and its structure determined"
+    value: "1964, Raphael Mechoulam, Yehiel Gaoni and Haviv Edery, Weizmann Institute, Israel"
+  - label: "U.S. federal prohibition begins"
+    value: "1937, Marihuana Tax Act"
+  - label: "Cannabis placed in U.S. Schedule I"
+    value: "1970, Controlled Substances Act"
+  - label: "First jurisdiction to fully legalize"
+    value: "2013, Uruguay"
+  - label: "First U.S. states to legalize recreational use"
+    value: "2012, Colorado and Washington"
+widgets:
+  - type: trivia
+    title: "Did you know?"
+    items:
+      - "The word \"cannabis\" likely comes from the language of the Scythians, the same steppe people Herodotus described inhaling its smoke around 440 BCE."
+      - "The 1936 film Reefer Madness is often mistaken for government propaganda, but it was an independent production. Harry Anslinger, the man who pushed federal prohibition through in 1937, actually tried to keep it out of theaters."
+      - "It took almost thirty years after THC was isolated in 1964 for scientists to work out why cannabis affects the body at all. The endocannabinoid system was not identified until 1992."
+  - type: quote
+    title: "In their words"
+    text: "They make a booth by fixing in the ground three sticks... and stretching around them woollen felts... Inside the booth they throw the seeds onto red-hot stones, and the vapor and steam rise... the Scythians howl with joy at the vapor-bath."
+    attribution: "Herodotus, The Histories, c. 440 BCE"
+  - type: factbox
+    title: "Legal status snapshot, 2026"
+    items:
+      - label: "Uruguay"
+        value: "Fully legal since 2013"
+      - label: "Canada"
+        value: "Fully legal nationwide since 2018"
+      - label: "United States"
+        value: "Federally Schedule I; legal adult-use in a majority of states"
+      - label: "Netherlands"
+        value: "Retail sale tolerated; cultivation formally illegal"
+      - label: "Germany"
+        value: "Legal since 2024"
+      - label: "Most of Asia and the Middle East"
+        value: "Largely prohibited, with narrow medical exceptions in some countries"
+  - type: related
+    title: "Related articles"
+    items:
+      - frenchy-cannoli
+      - mila-the-hashqueen
+      - sam-the-skunkman
 ---
 **Cannabis** has been cultivated, traded, smoked, eaten, worn, and worshipped by human societies for at least twelve thousand years, making it one of the oldest domesticated plants whose relationship with people touches nearly every domain of life: subsistence agriculture, textiles and rope-making, medicine, religious ritual, recreation, art, law, and modern science. Its history spans the Neolithic farming villages of East Asia, the steppe burial grounds of the Scythians, the medical colleges of colonial Calcutta, the salons of nineteenth-century Paris, the courtrooms of Depression-era America, and the licensed dispensaries of twenty-first-century legal markets. Few plants have been simultaneously so useful and so controversial, and few have left so long and so global a trail of physical, textual, and cultural evidence.
 
 This article traces that history from the earliest archaeological evidence of cannabis use through its movement across Asia, the Middle East, Africa, Europe, and the Americas, into the eras of criminalization, prohibition, scientific discovery, and the modern global wave of legalization and medical re-acceptance.
+
+<figure class="cp-figure cp-figure-wide">
+  <div class="cp-image-placeholder" aria-hidden="true">
+    <span class="cp-image-placeholder-icon">&#128247;</span>
+    <span class="cp-image-placeholder-label">Image needed</span>
+  </div>
+  <figcaption>A composite banner image spanning the plant's history: Neolithic hemp cordage, an ancient Chinese pharmacopeia page, a pressed block of hashish, and a modern legal cannabis greenhouse would all work well here.</figcaption>
+</figure>
 
 ## Etymology and taxonomy
 
@@ -41,23 +90,39 @@ Genetic and archaeobotanical research points to the plant's origin somewhere in 
 
 The earliest archaeological record of cannabis use is fiber, not drug, use. Cord-marked pottery from the Yuan-shan culture site in what is now Taiwan, dated to roughly 12,000 years before present, shows impressions consistent with hemp cordage, and an archaeological site on the Oki Islands near Japan has yielded cannabis achenes (seeds) dated to around 8000 BCE, indicating that early East Asian communities were harvesting the plant for fiber and food well before there is any clear evidence they were using it for its psychoactive properties.[^2] Hemp's exceptionally strong bast fiber made it valuable for cordage, nets, textiles, and later paper, while its oily seeds were eaten as food across many of the same early agricultural societies.
 
+<figure class="cp-figure cp-figure-right">
+  <div class="cp-image-placeholder" aria-hidden="true">
+    <span class="cp-image-placeholder-icon">&#128247;</span>
+    <span class="cp-image-placeholder-label">Image needed</span>
+  </div>
+  <figcaption>Reconstruction or photograph of a wooden brazier of the type recovered from the Jirzankal Cemetery in the Pamir Mountains, used to burn cannabis during mortuary rituals around 500 BCE.</figcaption>
+</figure>
+
 ### The first solid evidence of psychoactive use
 
-The clearest physical evidence that ancient people deliberately used cannabis for its psychoactive effects comes from Central Asia roughly two and a half thousand years ago. At the Jirzankal Cemetery in the Pamir Mountains of western China, archaeologists recovered wooden braziers containing burnt plant residue; chemical analysis published in 2019 found cannabinoid signatures consistent with cannabis that had been selectively grown or chosen for unusually high THC content, burned in mortuary rituals around 500 BCE — strongly suggesting that mourners inhaled psychoactive smoke as part of funerary ceremony.[^3] A separate, even more direct find comes from the Jiayi cemetery and other Yanghai-area tombs near Turpan in China's Xinjiang region, where archaeologists recovered roughly 800 grams of cannabis, including intact female flowering tops, buried with a man around 2,500 years ago along a branch of what would become the Silk Road; the material was still green and retained measurable THC, making it among the best-preserved direct evidence of ancient drug use anywhere in the world.[^4]
+The clearest physical evidence that ancient people deliberately used cannabis for its psychoactive effects comes from Central Asia roughly two and a half thousand years ago. At the Jirzankal Cemetery in the Pamir Mountains of western China, archaeologists recovered wooden braziers containing burnt plant residue; chemical analysis published in 2019 found cannabinoid signatures consistent with cannabis that had been selectively grown or chosen for unusually high THC content, burned in mortuary rituals around 500 BCE. The finding strongly suggests that mourners inhaled psychoactive smoke as part of funerary ceremony.[^3] A separate, even more direct find comes from the Jiayi cemetery and other Yanghai-area tombs near Turpan in China's Xinjiang region, where archaeologists recovered roughly 800 grams of cannabis, including intact female flowering tops, buried with a man around 2,500 years ago along a branch of what would become the Silk Road. The material was still green and retained measurable THC, making it among the best-preserved direct evidence of ancient drug use anywhere in the world.[^4]
 
-Writing around 440 BCE, the Greek historian Herodotus described the nomadic Scythians of the Central Asian steppe throwing cannabis seeds and flowers onto heated stones inside small tents, inhaling the resulting vapor and, in his account, "shout[ing] for joy" — a description that lines up strikingly well with the archaeological braziers later excavated at Pamir sites, and which is often cited as the earliest written account of cannabis used specifically to produce intoxication.[^3] The Scythians, a horse-mounted, far-ranging steppe culture, are widely credited with helping spread cannabis use and cultivation across a huge swath of Europe, the Middle East, and North Africa through trade and migration during the first millennium BCE.[^17]
+Writing around 440 BCE, the Greek historian Herodotus described the nomadic Scythians of the Central Asian steppe throwing cannabis seeds and flowers onto heated stones inside small tents, inhaling the resulting vapor and, in his account, howling with joy. The description lines up strikingly well with the archaeological braziers later excavated at Pamir sites, and it is often cited as the earliest written account of cannabis used specifically to produce intoxication.[^3] The Scythians, a horse-mounted, far-ranging steppe culture, are widely credited with helping spread cannabis use and cultivation across a huge swath of Europe, the Middle East, and North Africa through trade and migration during the first millennium BCE.[^17]
 
 ## Cannabis in ancient and classical civilizations
 
 ### China
 
-Cannabis (*dàmá*) occupied a central place in early Chinese material culture and medicine. Beyond its use as a fiber and food crop, the plant appears in the *Shennong Bencaojing* ("Shennong's Materia Medica Classic"), the oldest surviving Chinese pharmacopeia, traditionally attributed to the legendary "Father of Chinese Medicine," Shennong, and generally dated by scholars to around the first century CE, though it claims to preserve a much older oral and written tradition.[^5] The text describes cannabis seed and flower preparations used to treat pain, "wind" disorders, menstrual problems, and digestive ailments, and lists hemp seed among the "fundamental" herbs of what would become Traditional Chinese Medicine, a status it has retained, in modified form, into the present.[^5] Surgical legend holds that the physician Hua Tuo (c. 140–208 CE) used a cannabis-and-wine anesthetic preparation called *mafeisan* before operations, although the historical accuracy of this specific account is debated by historians of medicine.
+Cannabis (*dàmá*) occupied a central place in early Chinese material culture and medicine. Beyond its use as a fiber and food crop, the plant appears in the *Shennong Bencaojing* ("Shennong's Materia Medica Classic"), the oldest surviving Chinese pharmacopeia, traditionally attributed to the legendary "Father of Chinese Medicine," Shennong, and generally dated by scholars to around the first century CE, though it claims to preserve a much older oral and written tradition.[^5] The text describes cannabis seed and flower preparations used to treat pain, "wind" disorders, menstrual problems, and digestive ailments, and lists hemp seed among the "fundamental" herbs of what would become Traditional Chinese Medicine, a status it has retained, in modified form, into the present.[^5] Surgical legend holds that the physician Hua Tuo (c. 140 to 208 CE) used a cannabis-and-wine anesthetic preparation called *mafeisan* before operations, although the historical accuracy of this specific account is debated by historians of medicine.
+
+<figure class="cp-figure cp-figure-left">
+  <div class="cp-image-placeholder" aria-hidden="true">
+    <span class="cp-image-placeholder-icon">&#128247;</span>
+    <span class="cp-image-placeholder-label">Image needed</span>
+  </div>
+  <figcaption>A page from a traditional Chinese materia medica describing hemp seed as medicine would illustrate this section well.</figcaption>
+</figure>
 
 ### India
 
 Cannabis appears in some of the oldest surviving Hindu religious literature. The *Atharvaveda*, generally dated to between roughly 1500 and 1000 BCE, names cannabis (as *bhanga*) among five sacred plants, alongside soma, said to relieve anxiety and bring joy.[^6] Out of this tradition grew three distinct Indian cannabis preparations that persist to this day: *bhang*, a milk-, spice-, and nut-based drink made from ground leaves, traditionally consumed during festivals such as Holi and Maha Shivaratri; *ganja*, the dried flowering tops of female plants; and *charas*, hand-rubbed resin collected directly from the living plant, considered the most potent traditional preparation and a close cousin of hashish.[^6]
 
-Cannabis became closely associated with the Hindu god Shiva, sometimes called "Lord of Bhang," who is said in popular tradition to have brought the plant down from the Himalayas and made it his favored food; devotees have for centuries prepared and shared bhang as a sacrament intended to bring them closer to Shiva's consciousness, a practice that continues at Shaivite temples and festivals across India today.[^6] India's long, continuous, religiously sanctioned relationship with cannabis is one of the most thoroughly documented in any culture, and it shaped the country's comparatively permissive modern regulatory stance toward bhang even as ganja and charas became more tightly restricted under twentieth-century international drug treaties.
+Cannabis became closely associated with the Hindu god Shiva, sometimes called "Lord of Bhang," who is said in popular tradition to have brought the plant down from the Himalayas and made it his favored food. Devotees have for centuries prepared and shared bhang as a sacrament intended to bring them closer to Shiva's consciousness, a practice that continues at Shaivite temples and festivals across India today.[^6] India's long, continuous, religiously sanctioned relationship with cannabis is one of the most thoroughly documented in any culture, and it shaped the country's comparatively permissive modern regulatory stance toward bhang even as ganja and charas became more tightly restricted under twentieth-century international drug treaties.
 
 ### Ancient Near East and Egypt
 
@@ -65,13 +130,21 @@ Cannabis use is attested across the ancient Near East. The Assyrians appear to h
 
 ### Greece and Rome
 
-Greek and Roman writers treated cannabis primarily as a fiber and rope-making crop — essential to shipbuilding and naval power — but also recorded medicinal and occasional intoxicant uses. Herodotus's account of Scythian cannabis vapor baths is the best-known classical reference. The physician Dioscorides, in his first-century CE pharmacological text *De Materia Medica*, described cannabis seed as useful for easing joint pain and, taken in excess, for dulling sexual function, while Galen, the influential second-century physician, noted cannabis cakes served at banquets that produced warmth and, in larger quantities, intoxication. Roman naturalist Pliny the Elder likewise recorded hemp's fiber and medicinal seed uses in his *Natural History*. Throughout the classical Mediterranean, hemp fiber for rope and sailcloth was arguably of greater economic importance than any psychoactive use of the plant.
+Greek and Roman writers treated cannabis primarily as a fiber and rope-making crop, essential to shipbuilding and naval power, but also recorded medicinal and occasional intoxicant uses. Herodotus's account of Scythian cannabis vapor baths is the best-known classical reference. The physician Dioscorides, in his first-century CE pharmacological text *De Materia Medica*, described cannabis seed as useful for easing joint pain and, taken in excess, for dulling sexual function, while Galen, the influential second-century physician, noted cannabis cakes served at banquets that produced warmth and, in larger quantities, intoxication. The Roman naturalist Pliny the Elder likewise recorded hemp's fiber and medicinal seed uses in his *Natural History*. Throughout the classical Mediterranean, hemp fiber for rope and sailcloth was arguably of greater economic importance than any psychoactive use of the plant.
 
 ## The Islamic world and the rise of hashish
 
-Hashish — concentrated cannabis resin, typically separated from the plant and pressed into blocks — rose to particular prominence in the Islamic world during the medieval period. Because the Quran explicitly prohibits *khamr* (wine and other fermented intoxicants) but does not mention cannabis by name, many medieval Islamic scholars and communities treated hashish in a markedly different legal and social category than alcohol, and its use spread widely across Persia, the Arabian Peninsula, and North Africa between roughly the eighth and thirteenth centuries CE.[^7] One of the earliest surviving written references to hashish appears in the tenth-century *Book of Poisons* by the Iraqi alchemist and toxicologist Ibn Wahshiyya, and the substance later features prominently in the medieval Arabic story collection *One Thousand and One Nights*.[^7] The word *hashish* itself is generally traced to the Arabic root for "dried herb" or "grass."[^7]
+Hashish, concentrated cannabis resin typically separated from the plant and pressed into blocks, rose to particular prominence in the Islamic world during the medieval period. Because the Quran explicitly prohibits *khamr* (wine and other fermented intoxicants) but does not mention cannabis by name, many medieval Islamic scholars and communities treated hashish in a markedly different legal and social category than alcohol, and its use spread widely across Persia, the Arabian Peninsula, and North Africa between roughly the eighth and thirteenth centuries CE.[^7] One of the earliest surviving written references to hashish appears in the tenth-century *Book of Poisons* by the Iraqi alchemist and toxicologist Ibn Wahshiyya, and the substance later features prominently in the medieval Arabic story collection *One Thousand and One Nights*.[^7] The word *hashish* itself is generally traced to the Arabic root for "dried herb" or "grass."[^7]
 
-Hashish also became entangled with one of the most persistent legends in cannabis history: the supposed connection between the word "assassin" and the followers of Hassan-i Sabbah, the eleventh-century founder of the Nizari Ismaili "Assassins" of Alamut. Medieval European travelers' accounts claimed Hassan-i Sabbah drugged his followers with hashish to inspire fanatical loyalty and fearlessness before sending them on missions of political murder, supposedly giving rise to the term *hashishin* and, through it, "assassin." Modern historians regard this story as largely legendary; the Nizari Ismailis themselves reportedly used the term *Asāsīyūn*, meaning roughly "people faithful to the foundation [of the faith]," and the hashish-based etymology appears to have been a hostile, possibly propagandistic, label applied by rivals rather than a documented practice.[^8] The legend nonetheless cemented an enduring (if largely mythical) Western association between cannabis, secrecy, and violence that would echo, in distorted form, into twentieth-century anti-marijuana propaganda.
+<figure class="cp-figure cp-figure-right">
+  <div class="cp-image-placeholder" aria-hidden="true">
+    <span class="cp-image-placeholder-icon">&#128247;</span>
+    <span class="cp-image-placeholder-label">Image needed</span>
+  </div>
+  <figcaption>A pressed block of traditional hand-rubbed hashish, of the kind produced across Morocco, Lebanon, and Afghanistan for centuries.</figcaption>
+</figure>
+
+Hashish also became entangled with one of the most persistent legends in cannabis history: the supposed connection between the word "assassin" and the followers of Hassan-i Sabbah, the eleventh-century founder of the Nizari Ismaili "Assassins" of Alamut. Medieval European travelers' accounts claimed Hassan-i Sabbah drugged his followers with hashish to inspire fanatical loyalty and fearlessness before sending them on missions of political murder, supposedly giving rise to the term *hashishin* and, through it, "assassin." Modern historians regard this story as largely legendary; the Nizari Ismailis themselves reportedly used the term *Asāsīyūn*, meaning roughly "people faithful to the foundation of the faith," and the hashish-based etymology appears to have been a hostile, possibly propagandistic, label applied by rivals rather than a documented practice.[^8] The legend nonetheless cemented an enduring, if largely mythical, Western association between cannabis, secrecy, and violence that would echo, in distorted form, into twentieth-century anti-marijuana propaganda.
 
 ## Sub-Saharan Africa
 
@@ -79,7 +152,7 @@ Cannabis reached eastern and southern Africa via long-distance Indian Ocean and 
 
 ## Medieval and early modern Europe
 
-In medieval and early modern Europe, hemp was overwhelmingly an agricultural fiber crop rather than a recreational drug. Hemp rope, canvas sailcloth, and rigging were strategically vital to European naval power; English monarchs at various points legally required landholders to grow hemp to supply the navy and merchant fleet, and similar mandates appeared elsewhere in Europe. Hemp paper was also widely used; some of the earliest printed books and important historical documents were printed on hemp-fiber paper. Psychoactive cannabis use was comparatively rare and poorly documented in medieval Christian Europe, although the plant occasionally appears in folk medicine and, more luridly, in later witch-trial-era accounts describing "flying ointments," in which cannabis was sometimes listed (often inaccurately or sensationally) alongside genuinely deliriant plants like henbane and belladonna.
+In medieval and early modern Europe, hemp was overwhelmingly an agricultural fiber crop rather than a recreational drug. Hemp rope, canvas sailcloth, and rigging were strategically vital to European naval power; English monarchs at various points legally required landholders to grow hemp to supply the navy and merchant fleet, and similar mandates appeared elsewhere in Europe. Hemp paper was also widely used; some of the earliest printed books and important historical documents were printed on hemp-fiber paper. Psychoactive cannabis use was comparatively rare and poorly documented in medieval Christian Europe, although the plant occasionally appears in folk medicine and, more luridly, in later witch-trial-era accounts describing "flying ointments," in which cannabis was sometimes listed, often inaccurately or sensationally, alongside genuinely deliriant plants like henbane and belladonna.
 
 ## Cannabis comes to the Americas
 
@@ -89,7 +162,7 @@ Hemp cultivation continued to be closely tied to the new United States' agricult
 
 ## Cannabis enters Western medicine
 
-Western medicine's modern engagement with cannabis as a drug, rather than purely a fiber crop, is conventionally traced to the Irish physician William Brooke O'Shaughnessy. While serving as a professor at the Medical College of Calcutta in British India during the 1830s, O'Shaughnessy systematically tested cannabis preparations, first on animals and then on patients, documenting apparent benefits against muscle spasm, convulsions, rheumatic pain, and other conditions.[^10] He returned to Britain in 1842 with cannabis extracts and his findings, helping introduce therapeutic cannabis to European and, soon after, American medicine; between roughly 1839 and 1900, more than a hundred scientific articles on cannabis's medicinal properties appeared in Western medical journals, and cannabis tinctures became a fixture of nineteenth-century pharmacy shelves and patent medicines.[^10]
+Western medicine's modern engagement with cannabis as a drug, rather than purely a fiber crop, is conventionally traced to the Irish physician William Brooke O'Shaughnessy. While serving as a professor at the Medical College of Calcutta in British India during the 1830s, O'Shaughnessy systematically tested cannabis preparations, first on animals and then on patients, documenting apparent benefits against muscle spasm, convulsions, rheumatic pain, and other conditions.[^10] He returned to Britain in 1842 with cannabis extracts and his findings, helping introduce therapeutic cannabis to European and, soon after, American medicine. Between roughly 1839 and 1900, more than a hundred scientific articles on cannabis's medicinal properties appeared in Western medical journals, and cannabis tinctures became a fixture of nineteenth-century pharmacy shelves and patent medicines.[^10]
 
 Cannabis also captured the imagination of nineteenth-century European literary culture. In Paris in the 1840s, the psychiatrist Jacques-Joseph Moreau and writers Théophile Gautier and Charles Baudelaire helped found the *Club des Hashischins* ("Club of the Hashish-Eaters"), an informal gathering that met at the Hôtel Pimodan to experiment with *dawamesc*, a cannabis-resin confection mixed with butter, honey, and pistachios, in the name of art and self-exploration; members and associates included Alexandre Dumas, Victor Hugo, and Gérard de Nerval.[^11] Moreau published a clinical study, *Du Hachisch et de l'Aliénation Mentale* ("Hashish and Mental Illness"), in 1845, arguing that hashish intoxication offered a window into the mechanisms of madness, while Baudelaire's 1860 essay collection *Les Paradis Artificiels* gave hashish a lasting, if ambivalent, place in European Romantic and proto-modernist literature.[^11]
 
@@ -101,37 +174,53 @@ Recreational cannabis use was little known in the United States before the early
 
 Cannabis prohibition in the United States crystallized in the 1930s amid a wave of sensational, frequently racially charged anti-marijuana journalism, much of it promoted by the Hearst newspaper chain, that linked the drug to insanity, violent crime, and "foreign" influence, particularly targeting Mexican immigrant and Black communities.[^12] Harry J. Anslinger, the first commissioner of the U.S. Federal Bureau of Narcotics, is popularly remembered as the chief architect of federal prohibition; more recent historical scholarship complicates this picture, suggesting Anslinger initially resisted federal marijuana prohibition on practical and jurisdictional grounds before ultimately backing it under pressure from state officials and his own superiors.[^12] The resulting Marihuana Tax Act of 1937, introduced by Representative Robert L. Doughton and shepherded through Congress with Anslinger's eventual support, did not technically outlaw cannabis outright but imposed prohibitive taxes and licensing requirements that functioned, in practice, as national prohibition.[^12] The notorious 1936 propaganda film *Reefer Madness*, often assumed to be an official government production, was actually an independently produced morality film; Anslinger in fact declined to endorse it and reportedly tried to limit its distribution after the Tax Act passed.[^12]
 
+<figure class="cp-figure cp-figure-left">
+  <div class="cp-image-placeholder" aria-hidden="true">
+    <span class="cp-image-placeholder-icon">&#128247;</span>
+    <span class="cp-image-placeholder-label">Image needed</span>
+  </div>
+  <figcaption>A 1930s anti-marijuana poster or newspaper clipping from the Hearst-era press campaign would suit this section.</figcaption>
+</figure>
+
 ## Mid-century counterculture
 
 From the 1940s through the 1960s, cannabis use persisted in jazz and Beat-generation circles and expanded dramatically during the 1960s counterculture, becoming closely identified with the hippie movement, campus antiwar activism, and a broader generational rejection of mainstream social and drug norms. This period cemented cannabis's image in mainstream American culture as a symbol of youthful rebellion, setting the stage for the much harsher federal response that followed.
 
 ## The War on Drugs and Schedule I
 
-In October 1970, the United States Congress passed the Controlled Substances Act, which President Richard Nixon signed into law; the Act classified cannabis as a Schedule I substance, the strictest category, reserved for drugs deemed to have "no currently accepted medical use" and "a high potential for abuse," placing it formally alongside heroin and LSD.[^13] Nixon's own appointed Shafer Commission, the National Commission on Marihuana and Drug Abuse, reported back in 1972 with a recommendation to decriminalize personal possession, but Nixon, who had handpicked most of its members, rejected the commission's central findings outright.[^14]
+In October 1970, the United States Congress passed the Controlled Substances Act, which President Richard Nixon signed into law. The Act classified cannabis as a Schedule I substance, the strictest category, reserved for drugs deemed to have "no currently accepted medical use" and "a high potential for abuse," placing it formally alongside heroin and LSD.[^13] Nixon's own appointed Shafer Commission, the National Commission on Marihuana and Drug Abuse, reported back in 1972 with a recommendation to decriminalize personal possession, but Nixon, who had handpicked most of its members, rejected the commission's central findings outright.[^14]
 
-The political motivations behind the broader "War on Drugs" Nixon launched in 1971 were later described with startling candor by his domestic policy advisor John Ehrlichman, who told journalist Dan Baum in a 1994 interview, published in *Harper's Magazine* in 2016, that the Nixon White House had "two enemies: the antiwar left and Black people," and that "by getting the public to associate the hippies with marijuana and Blacks with heroin, and then criminalizing both heavily, we could disrupt those communities… Did we know we were lying about the drugs? Of course we did." The authenticity and full context of this widely quoted remark has since been disputed by some Nixon-era officials and by Ehrlichman's own children, though it remains one of the most frequently cited statements in discussions of the war on drugs' origins.[^14]
+The political motivations behind the broader "War on Drugs" Nixon launched in 1971 were later described with startling candor by his domestic policy advisor John Ehrlichman, who told journalist Dan Baum in a 1994 interview, published in *Harper's Magazine* in 2016, that the Nixon White House had "two enemies: the antiwar left and Black people," and that "by getting the public to associate the hippies with marijuana and Blacks with heroin, and then criminalizing both heavily, we could disrupt those communities... Did we know we were lying about the drugs? Of course we did." The authenticity and full context of this widely quoted remark has since been disputed by some Nixon-era officials and by Ehrlichman's own children, though it remains one of the most frequently cited statements in discussions of the war on drugs' origins.[^14]
 
 ## The scientific era: THC, CBD, and the endocannabinoid system
 
 Modern cannabis pharmacology dates to 1964, when chemist Raphael Mechoulam, working with Yehiel Gaoni and Haviv Edery at the Weizmann Institute of Science in Israel, isolated and determined the chemical structure of delta-9-tetrahydrocannabinol (THC), the plant's principal psychoactive compound, and around the same time worked out the structure of cannabidiol (CBD) as well.[^15] Mechoulam's team obtained several kilograms of confiscated cannabis from police, isolated its component compounds, and confirmed THC's psychoactive role through carefully controlled testing.[^15]
 
-It would take nearly thirty more years for science to explain *why* the human body responds to these plant compounds at all. In 1988, researchers identified a specific cannabinoid receptor (later called CB1) in the brain, and in 1992 Mechoulam and colleagues identified anandamide, the first endogenous ("self-produced") cannabinoid compound in the human body, demonstrating that humans (and, it turns out, most animals) naturally produce their own cannabinoid-like signaling molecules as part of a broad regulatory network now known as the endocannabinoid system, which influences mood, appetite, pain, memory, and immune function.[^15] This discovery reframed cannabis not merely as an external intoxicant but as a plant whose chemistry happens to interact directly with one of the body's own fundamental signaling systems, and it underpins the modern medical cannabis and cannabinoid pharmaceutical industries.
+It would take nearly thirty more years for science to explain why the human body responds to these plant compounds at all. In 1988, researchers identified a specific cannabinoid receptor, later called CB1, in the brain, and in 1992 Mechoulam and colleagues identified anandamide, the first endogenous, or self-produced, cannabinoid compound in the human body. The discovery demonstrated that humans, and it turns out most animals, naturally produce their own cannabinoid-like signaling molecules as part of a broad regulatory network now known as the endocannabinoid system, which influences mood, appetite, pain, memory, and immune function.[^15] This finding reframed cannabis not merely as an external intoxicant but as a plant whose chemistry happens to interact directly with one of the body's own fundamental signaling systems, and it underpins the modern medical cannabis and cannabinoid pharmaceutical industries.
 
 ## The road back: medical marijuana and modern legalization
 
-The late twentieth century saw the beginnings of a slow legal reversal in parts of the world. In the United States, grassroots activism by patients, caregivers, and advocates — galvanized in significant part by the AIDS crisis of the 1980s and early 1990s, when patients and physicians in cities like San Francisco found cannabis useful for combating wasting syndrome and nausea — led California voters to pass Proposition 215 in 1996, creating the first explicit U.S. state medical marijuana law and triggering a wave of similar state-level measures over the following two decades.[^16]
+The late twentieth century saw the beginnings of a slow legal reversal in parts of the world. In the United States, grassroots activism by patients, caregivers, and advocates, galvanized in significant part by the AIDS crisis of the 1980s and early 1990s, when patients and physicians in cities like San Francisco found cannabis useful for combating wasting syndrome and nausea, led California voters to pass Proposition 215 in 1996, creating the first explicit U.S. state medical marijuana law and triggering a wave of similar state-level measures over the following two decades.[^16]
 
 A more sweeping shift began in the 2010s. In 2012, Colorado and Washington became the first U.S. states to legalize cannabis for adult recreational use via ballot initiative, opening regulated commercial markets in 2014.[^16] Uruguay went further still, becoming in 2013 the first country in the world to legalize cannabis cultivation, sale, and consumption at the national level.[^16] Canada followed in October 2018, becoming the second nation to legalize recreational cannabis nationwide under its federal Cannabis Act.[^16]
 
-By 2026, nearly fifty countries had legalized cannabis in some form, whether medical, recreational, or both, with fully regulated adult-use commercial markets operating across Canada, Uruguay, and a majority of U.S. states (despite cannabis's continued federal Schedule I status in the U.S.), as well as in Germany, Malta, Luxembourg, the Czech Republic, South Africa, and Georgia, among others; dozens of additional countries, including much of Europe, parts of Latin America, and a growing number of African and Asian nations, permit medical cannabis use under varying degrees of restriction.[^16] Global legal status remains a genuine patchwork, ranging from strict criminal prohibition in some jurisdictions to fully licensed commercial markets in others, and continues to change year to year.
+By 2026, nearly fifty countries had legalized cannabis in some form, whether medical, recreational, or both, with fully regulated adult-use commercial markets operating across Canada, Uruguay, and a majority of U.S. states, despite cannabis's continued federal Schedule I status in the U.S., as well as in Germany, Malta, Luxembourg, the Czech Republic, South Africa, and Georgia, among others. Dozens of additional countries, including much of Europe, parts of Latin America, and a growing number of African and Asian nations, permit medical cannabis use under varying degrees of restriction.[^16] Global legal status remains a genuine patchwork, ranging from strict criminal prohibition in some jurisdictions to fully licensed commercial markets in others, and it continues to change year to year.
+
+<figure class="cp-figure cp-figure-right">
+  <div class="cp-image-placeholder" aria-hidden="true">
+    <span class="cp-image-placeholder-icon">&#128247;</span>
+    <span class="cp-image-placeholder-label">Image needed</span>
+  </div>
+  <figcaption>A licensed cannabis cultivation greenhouse in a legal market, illustrating the shift from prohibition to regulated commercial production.</figcaption>
+</figure>
 
 ## Religion and spirituality
 
-Beyond the Hindu and Shaivite traditions described above, cannabis holds a central sacramental role in Rastafari, the Jamaica-born spiritual and social movement that emerged in the 1930s. Cannabis itself likely reached Jamaica in the 1840s with indentured laborers arriving from India, and Rastafari, which developed roughly a century later as a movement of Afrocentric spiritual and cultural reclamation in the wake of colonialism, adopted cannabis — referred to as "the holy herb" or "ganja" — as a sacrament believed to aid meditation, scriptural insight, and closeness to the divine; it is smoked in ritual pipes called chalices or rolled into "spliffs," and sometimes burned as an offering.[^19] Rastafari's relationship with cannabis was carried to global audiences in the 1970s largely through the music of Bob Marley and Peter Tosh, profoundly shaping international popular culture's image of cannabis for the rest of the twentieth century.[^19]
+Beyond the Hindu and Shaivite traditions described above, cannabis holds a central sacramental role in Rastafari, the Jamaica-born spiritual and social movement that emerged in the 1930s. Cannabis itself likely reached Jamaica in the 1840s with indentured laborers arriving from India, and Rastafari, which developed roughly a century later as a movement of Afrocentric spiritual and cultural reclamation in the wake of colonialism, adopted cannabis, referred to as "the holy herb" or "ganja," as a sacrament believed to aid meditation, scriptural insight, and closeness to the divine. It is smoked in ritual pipes called chalices or rolled into "spliffs," and sometimes burned as an offering.[^19] Rastafari's relationship with cannabis was carried to global audiences in the 1970s largely through the music of Bob Marley and Peter Tosh, profoundly shaping international popular culture's image of cannabis for the rest of the twentieth century.[^19]
 
 ## Cultural and economic impact
 
-Cannabis's twentieth- and twenty-first-century cultural footprint is difficult to overstate: it runs through jazz, reggae, hip-hop, rock, and countless other musical genres; through literature from Baudelaire to the Beat poets; through film, from exploitation pictures like *Reefer Madness* to the stoner comedies of later decades; and through visual art, fashion, and an entire specialized vocabulary and iconography. Economically, the emergence of large, legally regulated cannabis markets since the early 2010s has created a significant new licensed agricultural and retail industry across multiple countries, alongside continuing illicit markets in jurisdictions where the plant remains restricted, and has revived interest in industrial hemp for textiles, building materials, paper, and food products much as it was used in antiquity.
+Cannabis's twentieth- and twenty-first-century cultural footprint is difficult to overstate: it runs through jazz, reggae, hip-hop, rock, and countless other musical genres; through literature from Baudelaire to the Beat poets; through film, from exploitation pictures like *Reefer Madness* to the stoner comedies of later decades; and through visual art, fashion, and an entire specialized vocabulary and iconography. Economically, the emergence of large, legally regulated cannabis markets since the early 2010s has created a significant new licensed agricultural and retail industry across multiple countries, alongside continuing illicit markets in jurisdictions where the plant remains restricted, and it has revived interest in industrial hemp for textiles, building materials, paper, and food products much as it was used in antiquity.
 
 ## See also
 
@@ -145,16 +234,16 @@ Cannabis's twentieth- and twenty-first-century cultural footprint is difficult t
 ## References
 
 [^1]: "Cannabis," etymology and Scythian-era spread; see Wikipedia, *History of cannabis*. <https://en.wikipedia.org/wiki/History_of_cannabis>
-[^2]: Wikipedia, *History of cannabis* — earliest fiber evidence (Yuan-shan culture, c. 10,000 BCE) and Oki Islands achenes (c. 8000 BCE). <https://en.wikipedia.org/wiki/History_of_cannabis>
+[^2]: Wikipedia, *History of cannabis*, earliest fiber evidence (Yuan-shan culture, c. 10,000 BCE) and Oki Islands achenes (c. 8000 BCE). <https://en.wikipedia.org/wiki/History_of_cannabis>
 [^3]: H. Ren et al., "The origins of cannabis smoking: Chemical residue evidence from the first millennium BCE in the Pamirs," *Science Advances*, 2019. <https://www.science.org/doi/10.1126/sciadv.aaw1391>; see also National Geographic, "Earliest evidence for cannabis smoking discovered in ancient tombs." <https://www.nationalgeographic.com/culture/article/earliest-evidence-cannabis-marijuana-smoking-china-tombs>
 [^4]: AAAS/Science, "Oldest evidence of marijuana use discovered in 2,500-year-old cemetery in peaks of western China." <https://www.science.org/content/article/oldest-evidence-marijuana-use-discovered-2500-year-old-cemetery-peaks-western-china>
-[^5]: Wikipedia, *History of medical cannabis* — Shennong Bencaojing and traditional Chinese medicine uses. <https://en.wikipedia.org/wiki/History_of_medical_cannabis>
+[^5]: Wikipedia, *History of medical cannabis*, Shennong Bencaojing and traditional Chinese medicine uses. <https://en.wikipedia.org/wiki/History_of_medical_cannabis>
 [^6]: Cannabis in the Vedas, bhang/ganja/charas, and the Shiva association; see Hope Trust India, "Cannabis in India: History, Culture & Legal Perspective" (<https://hopetrustindia.com/blog/indias-cannabis-history/>) and Wikipedia, *Cannabis and religion* (<https://en.wikipedia.org/wiki/Cannabis_and_religion>).
 [^7]: Cannanaskis, "The origins of Hashish," on hashish in the early Islamic world and its etymology. <https://www.cannanaskis.com/history/2020/4/19/the-origins-of-hashish>
-[^8]: Wikipedia, *Order of Assassins* — on Hassan-i Sabbah, the Nizari Ismailis, and the disputed hashish/"assassin" etymology. <https://en.wikipedia.org/wiki/Order_of_Assassins>
+[^8]: Wikipedia, *Order of Assassins*, on Hassan-i Sabbah, the Nizari Ismailis, and the disputed hashish/"assassin" etymology. <https://en.wikipedia.org/wiki/Order_of_Assassins>
 [^9]: Hemp in colonial Jamestown and Virginia, hemp-as-currency, and Washington and Jefferson's hemp cultivation; see Colonial Williamsburg, "Hemp & Flax in Colonial America" (<https://research.colonialwilliamsburg.org/foundation/journal/Winter15/hemp.cfm>) and Bastcore, "Hemp History." <https://bastcore.com/resources/hemp-history/>
 [^10]: W. B. O'Shaughnessy's introduction of cannabis to Western medicine; see Public Domain Review, "W. B. O'Shaughnessy and the Introduction of Cannabis to Modern Western Medicine." <https://publicdomainreview.org/essay/w-b-o-shaughnessy-and-the-introduction-of-cannabis-to-modern-western-medicine/>
-[^11]: Wikipedia, *Club des Hashischins* — on the Paris hashish club, its founders and members, and Moreau's and Baudelaire's writings. <https://en.wikipedia.org/wiki/Club_des_Hashischins>
+[^11]: Wikipedia, *Club des Hashischins*, on the Paris hashish club, its founders and members, and Moreau's and Baudelaire's writings. <https://en.wikipedia.org/wiki/Club_des_Hashischins>
 [^12]: On the Marihuana Tax Act of 1937, Harry Anslinger's role, and the *Reefer Madness* propaganda film; see Wikipedia, *Marihuana Tax Act of 1937* (<https://en.wikipedia.org/wiki/Marihuana_Tax_Act_of_1937>).
 [^13]: Cannabis classified Schedule I under the Controlled Substances Act of 1970; see Wikipedia, *Cannabis policy of the Richard Nixon administration*. <https://en.wikipedia.org/wiki/Cannabis_policy_of_the_Richard_Nixon_administration>
 [^14]: On the Shafer Commission and the Ehrlichman quotation reported by journalist Dan Baum; see Reason, "Richard Nixon privately admitted marijuana was 'not particularly dangerous'." <https://reason.com/2024/09/17/richard-nixon-privately-admitted-marijuana-was-not-particularly-dangerous/>

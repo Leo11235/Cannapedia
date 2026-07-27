@@ -56,8 +56,21 @@
   </div>
   <footer class="cp-footer">
     <p>Cannapedia is a demonstration encyclopedia project about cannabis &mdash; built for educational purposes. It is not affiliated with Wikipedia or the Wikimedia Foundation. Text is adapted from cited public sources; see each article's References section.</p>
+    <p><a href="/admin/">Editor login</a></p>
   </footer>
 </div>
 <script src="/static/js/search.js" defer></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function (user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function () {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>

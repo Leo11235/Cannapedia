@@ -23,7 +23,7 @@
       </td></tr>
       {% endif %}
       {% for row in article.infobox %}
-      <tr><th>{{ row[0] }}</th><td>{{ row[1] }}</td></tr>
+      <tr><th>{{ row.label }}</th><td>{{ row.value }}</td></tr>
       {% endfor %}
     </table>
     {% endif %}
@@ -33,12 +33,12 @@
       <div class="cp-widget-title">{{ w.title }}</div>
       {% if w.type == "trivia" %}
       <ul class="cp-widget-list">
-        {% for item in w.items %}<li>{{ item }}</li>{% endfor %}
+        {% for item in w["items"] %}<li>{{ item }}</li>{% endfor %}
       </ul>
       {% elif w.type == "timeline" %}
       <table class="cp-widget-timeline">
-        {% for row in w.items %}
-        <tr><th>{{ row[0] }}</th><td>{{ row[1] }}</td></tr>
+        {% for row in w["items"] %}
+        <tr><th>{{ row.label }}</th><td>{{ row.value }}</td></tr>
         {% endfor %}
       </table>
       {% elif w.type == "related" %}
@@ -51,8 +51,8 @@
       <blockquote class="cp-widget-quote">&ldquo;{{ w.text }}&rdquo;<footer>&mdash; {{ w.attribution }}</footer></blockquote>
       {% elif w.type == "factbox" %}
       <table class="cp-widget-timeline">
-        {% for row in w.items %}
-        <tr><th>{{ row[0] }}</th><td>{{ row[1] }}</td></tr>
+        {% for row in w["items"] %}
+        <tr><th>{{ row.label }}</th><td>{{ row.value }}</td></tr>
         {% endfor %}
       </table>
       {% endif %}

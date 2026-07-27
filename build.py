@@ -51,6 +51,7 @@ ARTICLES_DIR = ROOT / "content" / "articles"
 PAGES_DIR = ROOT / "content" / "pages"
 TEMPLATES_DIR = ROOT / "templates"
 STATIC_DIR = ROOT / "static"
+ADMIN_DIR = ROOT / "admin"
 DIST_DIR = ROOT / "dist"
 
 MD_EXTENSIONS = ["extra", "toc", "sane_lists", "smarty"]
@@ -141,12 +142,24 @@ def resolve_related_widgets(articles: list) -> None:
 
 
 def build():
+    # Rebuild idempotently: try a clean wipe of dist/, but don't require it.
+    # Some environments (locked files, certain sync/network filesystems)
+    # refuse deletes even though writes are fine, so we fall back to
+    # overwriting files in place rather than failing the whole build.
     if DIST_DIR.exists():
-        shutil.rmtree(DIST_DIR)
-    DIST_DIR.mkdir(parents=True)
+        try:
+            shutil.rmtree(DIST_DIR)
+        except OSError:
+            pass
+    DIST_DIR.mkdir(parents=True, exist_ok=True)
 
     if STATIC_DIR.exists():
-        shutil.copytree(STATIC_DIR, DIST_DIR / "static")
+        shutil.copytree(STATIC_DIR, DIST_DIR / "static", dirs_exist_ok=True)
+
+    # The Decap CMS editor panel (content/tags/etc. management for
+    # non-technical contributors) lives at /admin on the same deployed site.
+    if ADMIN_DIR.exists():
+        shutil.copytree(ADMIN_DIR, DIST_DIR / "admin", dirs_exist_ok=True)
 
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES_DIR)),

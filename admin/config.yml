@@ -1,0 +1,139 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Every save creates a draft that must be reviewed and published before it
+# goes live on the public site. See the "Workflow" tab in the editor.
+publish_mode: editorial_workflow
+
+media_folder: "static/img"
+public_folder: "/static/img"
+
+site_url: https://cannapedia.netlify.app
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    label_singular: "Article"
+    folder: "content/articles"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    identifier_field: "title"
+    summary: "{{title}} — {{status}}"
+    sortable_fields: ["title", "last_updated", "status"]
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Short description"
+        name: "short_description"
+        widget: "text"
+        hint: "One or two sentences shown right under the title. This is the most important line in the article."
+      - name: "categories"
+        label: "Categories"
+        widget: "list"
+        hint: "One category per line, e.g. People, Hashish, Cannabis culture."
+        field: {label: "Category", name: "category", widget: "string"}
+      - name: "status"
+        label: "Status"
+        widget: "select"
+        options: ["Stub", "Article", "Featured article"]
+        default: "Article"
+      - name: "last_updated"
+        label: "Last updated"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        default: ""
+      - name: "image"
+        label: "Lead / infobox image"
+        widget: "image"
+        required: false
+        hint: "Shows at the top of the infobox box on the right."
+      - name: "infobox_title"
+        label: "Infobox heading"
+        widget: "string"
+        required: false
+        hint: "Leave blank to just use the article title."
+      - name: "infobox"
+        label: "Infobox rows"
+        widget: "list"
+        required: false
+        hint: "The quick-facts table at the top of the sidebar, e.g. Born / Died / Occupation."
+        fields:
+          - {label: "Label", name: "label", widget: "string"}
+          - {label: "Value", name: "value", widget: "string"}
+      - name: "widgets"
+        label: "Sidebar widgets"
+        label_singular: "Widget"
+        widget: "list"
+        required: false
+        hint: "Extra info cards down the sidebar, like Wikipedia's 'Did you know?' boxes."
+        types:
+          - name: "trivia"
+            label: "Trivia list"
+            widget: "object"
+            fields:
+              - {label: "Card title", name: "title", widget: "string", default: "Did you know?"}
+              - name: "items"
+                label: "Trivia items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "text"}
+          - name: "quote"
+            label: "Quote"
+            widget: "object"
+            fields:
+              - {label: "Card title", name: "title", widget: "string", default: "In their words"}
+              - {label: "Quote text", name: "text", widget: "text"}
+              - {label: "Attribution", name: "attribution", widget: "string"}
+          - name: "timeline"
+            label: "Timeline"
+            widget: "object"
+            fields:
+              - {label: "Card title", name: "title", widget: "string", default: "Timeline"}
+              - name: "items"
+                label: "Timeline entries"
+                widget: "list"
+                fields:
+                  - {label: "Date / label", name: "label", widget: "string"}
+                  - {label: "Description", name: "value", widget: "string"}
+          - name: "factbox"
+            label: "Fact box"
+            widget: "object"
+            fields:
+              - {label: "Card title", name: "title", widget: "string", default: "Quick facts"}
+              - name: "items"
+                label: "Facts"
+                widget: "list"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "Value", name: "value", widget: "string"}
+          - name: "related"
+            label: "Related articles"
+            widget: "object"
+            fields:
+              - {label: "Card title", name: "title", widget: "string", default: "Related articles"}
+              - name: "items"
+                label: "Articles to link to"
+                widget: "list"
+                field:
+                  label: "Article"
+                  name: "article"
+                  widget: "relation"
+                  collection: "articles"
+                  search_fields: ["title"]
+                  display_fields: ["title"]
+                  value_field: "{{slug}}"
+      - {label: "Article body", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "Standalone pages"
+    label_singular: "Page"
+    files:
+      - name: "about"
+        label: "About page"
+        file: "content/pages/about.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Page body", name: "body", widget: "markdown"}
