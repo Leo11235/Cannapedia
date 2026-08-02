@@ -141,7 +141,104 @@ def resolve_related_widgets(articles: list) -> None:
                 w["resolved_items"] = resolved
 
 
+VALID_STATUSES = {"Stub", "Article", "Featured article"}
+VALID_WIDGET_TYPES = {"trivia", "quote", "timeline", "related", "factbox"}
+TABLE_WIDGET_TYPES = {"timeline", "factbox"}
+
+
+def validate_articles(articles: list) -> tuple:
+    """Sanity-check the loaded articles before anything gets written out.
+
+    Returns (errors, warnings). Errors describe things that would render
+    broken or misleading pages (a dangling "related" link, a malformed
+    widget row, two articles fighting over one URL) and should block a
+    build. Warnings are just missing polish (no short description, no
+    categories) -- worth flagging in the build log, not worth blocking a
+    publish over.
+    """
+    errors = []
+    warnings = []
+    seen_slugs = {}
+    by_slug = {a["slug"]: a for a in articles}
+
+    for a in articles:
+        label = f"\"{a.get('title') or a['slug']}\" ({a['slug']})"
+
+        if a["slug"] in seen_slugs:
+            errors.append(
+                f"{label}: slug is already used by {seen_slugs[a['slug']]} -- "
+                f"two articles can't share one URL."
+            )
+        else:
+            seen_slugs[a["slug"]] = label
+
+        if not (a.get("title") or "").strip():
+            errors.append(f"{a['slug']}: missing a title.")
+        if not (a.get("short_description") or "").strip():
+            warnings.append(f"{label}: no short_description set.")
+        if not a.get("categories"):
+            warnings.append(f"{label}: no categories set.")
+
+        status = a.get("status")
+        if status not in VALID_STATUSES:
+            warnings.append(
+                f"{label}: status \"{status}\" isn't one of {sorted(VALID_STATUSES)}."
+            )
+
+        for row in a.get("infobox") or []:
+            if not isinstance(row, dict) or not row.get("label") or "value" not in row:
+                errors.append(f"{label}: infobox row is missing a label/value: {row!r}")
+
+        for w in a.get("widgets") or []:
+            wtype = w.get("type")
+            if wtype not in VALID_WIDGET_TYPES:
+                errors.append(
+                    f"{label}: widget has an unknown type {wtype!r} "
+                    f"(expected one of {sorted(VALID_WIDGET_TYPES)})."
+                )
+                continue
+            if wtype in TABLE_WIDGET_TYPES:
+                for row in w.get("items") or []:
+                    if not isinstance(row, dict) or not row.get("label") or "value" not in row:
+                        errors.append(
+                            f"{label}: {wtype} widget row is missing a label/value: {row!r}"
+                        )
+            if wtype == "related":
+                for s in w.get("items") or []:
+                    if s not in by_slug:
+                        errors.append(
+                            f"{label}: \"related\" widget links to \"{s}\", "
+                            f"which isn't the slug of any existing article."
+                        )
+            if wtype == "quote" and not (w.get("text") or "").strip():
+                errors.append(f"{label}: quote widget has no quote text.")
+
+    return errors, warnings
+
+
 def build():
+    articles = sorted(
+        (load_article(p) for p in ARTICLES_DIR.glob("*.md")),
+        key=lambda a: a["title"],
+    )
+    pages = [load_page(p) for p in PAGES_DIR.glob("*.md")] if PAGES_DIR.exists() else []
+    resolve_related_widgets(articles)
+
+    # Validate before touching dist/ at all, so a bad article can never
+    # half-overwrite a previously-good build.
+    errors, warnings = validate_articles(articles)
+    for w in warnings:
+        print(f"[warning] {w}")
+    if errors:
+        print(f"\n[FAILED] {len(errors)} problem(s) found, nothing was published:")
+        for e in errors:
+            print(f"  - {e}")
+        print(
+            "\nFix these in the article (or in the CMS) and save/preview again. "
+            "dist/ was left untouched, so the live site is unaffected."
+        )
+        raise SystemExit(1)
+
     # Rebuild idempotently: try a clean wipe of dist/, but don't require it.
     # Some environments (locked files, certain sync/network filesystems)
     # refuse deletes even though writes are fine, so we fall back to
@@ -168,13 +265,6 @@ def build():
         lstrip_blocks=True,
     )
     env.filters["cslug"] = cslug
-
-    articles = sorted(
-        (load_article(p) for p in ARTICLES_DIR.glob("*.md")),
-        key=lambda a: a["title"],
-    )
-    pages = [load_page(p) for p in PAGES_DIR.glob("*.md")] if PAGES_DIR.exists() else []
-    resolve_related_widgets(articles)
 
     categories = {}
     for a in articles:

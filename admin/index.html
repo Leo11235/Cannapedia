@@ -20,5 +20,68 @@
       });
     }
   </script>
+
+  <!--
+    Small "what's new in the editor" + Markdown-import shortcut, drawn as a
+    fixed-position overlay rather than normal page content. Decap CMS takes
+    over the whole document body for its own layout, so anything added here
+    sits on top of it instead of competing for space -- this way it can't
+    get squashed or hidden by however Decap chooses to render that day.
+  -->
+  <style>
+    #cp-tools-badge {
+      position: fixed; right: 14px; bottom: 14px; z-index: 99999;
+      font-family: -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+      font-size: 13px;
+    }
+    #cp-tools-toggle {
+      background: #202122; color: #fff; border: none; border-radius: 999px;
+      padding: 8px 14px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    #cp-tools-panel {
+      display: none; position: absolute; bottom: 42px; right: 0;
+      width: 280px; max-height: 60vh; overflow-y: auto;
+      background: #fff; color: #202122; border-radius: 8px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.25); padding: 14px;
+    }
+    #cp-tools-panel.open { display: block; }
+    #cp-tools-panel h4 { margin: 0 0 6px; font-size: 13px; }
+    #cp-tools-panel ul { margin: 6px 0 12px; padding-left: 18px; }
+    #cp-tools-panel li { margin-bottom: 4px; }
+    #cp-tools-panel a { color: #36c; display: inline-block; margin-top: 4px; }
+  </style>
+  <div id="cp-tools-badge">
+    <div id="cp-tools-panel"></div>
+    <button id="cp-tools-toggle" type="button">Editor v&hellip; &middot; What's new</button>
+  </div>
+  <script>
+    (function () {
+      var toggle = document.getElementById("cp-tools-toggle");
+      var panel = document.getElementById("cp-tools-panel");
+      var loaded = false;
+
+      function render(data) {
+        var latest = data.entries[0];
+        var html = "<h4>Editor version " + data.current_version + " (" + latest.date + ")</h4><ul>";
+        latest.changes.forEach(function (c) { html += "<li>" + c + "</li>"; });
+        html += "</ul><a href=\"/admin/import.html\">Import a .md file &rarr;</a>";
+        panel.innerHTML = html;
+        toggle.textContent = "Editor v" + data.current_version + " · What's new";
+      }
+
+      toggle.addEventListener("click", function () {
+        panel.classList.toggle("open");
+        if (!loaded) {
+          loaded = true;
+          fetch("/admin/changelog.json")
+            .then(function (r) { return r.json(); })
+            .then(render)
+            .catch(function () {
+              panel.innerHTML = "<a href=\"/admin/import.html\">Import a .md file &rarr;</a>";
+            });
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

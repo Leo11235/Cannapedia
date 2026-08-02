@@ -2,8 +2,11 @@ backend:
   name: git-gateway
   branch: main
 
-# Every save creates a draft that must be reviewed and published before it
-# goes live on the public site. See the "Workflow" tab in the editor.
+# A save creates a Draft, not a live page. Whoever wrote it (you or your
+# brother, same account either way) moves it to "Ready" in the Workflow
+# view, previews it there, and clicks Publish themselves when it looks
+# right -- no second person or approval required, it's just a self-check
+# step before anything goes live. See NETLIFY-CMS-SETUP.md.
 publish_mode: editorial_workflow
 
 media_folder: "static/img"

@@ -1,0 +1,16 @@
+{
+  "current_version": "1.0",
+  "entries": [
+    {
+      "version": "1.0",
+      "date": "2026-08-02",
+      "changes": [
+        "Launched the web editor (this page) so articles, categories, and sidebar widgets can be created and edited from any browser, no code required.",
+        "Saves create a Draft you preview and publish yourself when ready, nothing goes live until you click Publish.",
+        "Added a Markdown file importer (Import a .md file, linked below) for dropping in articles written elsewhere.",
+        "Added automatic checks that catch broken links between articles and malformed data before anything publishes.",
+        "Added private, cookie-free visit analytics (no personal data collected)."
+      ]
+    }
+  ]
+}

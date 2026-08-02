@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cannapedia -- Import a Markdown file</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: -apple-system, system-ui, Segoe UI, Roboto, sans-serif; max-width: 780px; margin: 0 auto; padding: 24px 20px 80px; color: #202122; background: #fff; }
+    h1 { font-size: 1.4rem; margin-bottom: 4px; }
+    p.lede { color: #54595d; margin-top: 0; }
+    fieldset { border: 1px solid #c8ccd1; border-radius: 6px; padding: 16px; margin: 18px 0; }
+    legend { padding: 0 6px; font-weight: 600; }
+    label { display: block; font-weight: 600; margin-bottom: 6px; }
+    input[type=text] { width: 100%; padding: 8px; font-size: 1rem; box-sizing: border-box; border: 1px solid #a2a9b1; border-radius: 4px; }
+    textarea { width: 100%; min-height: 320px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.9rem; padding: 10px; box-sizing: border-box; border: 1px solid #a2a9b1; border-radius: 4px; }
+    .hint { color: #54595d; font-size: 0.85rem; margin-top: 6px; }
+    button { font-size: 1rem; padding: 10px 18px; border-radius: 4px; border: none; cursor: pointer; }
+    #submit-btn { background: #36c; color: #fff; }
+    #submit-btn:disabled { background: #a2a9b1; cursor: default; }
+    #status { margin-top: 18px; padding: 14px; border-radius: 6px; display: none; }
+    #status.ok { display: block; background: #d5fdf4; border: 1px solid #14866d; }
+    #status.err { display: block; background: #ffe9e5; border: 1px solid #b32424; }
+    #status a { color: #36c; }
+    #login-gate { padding: 40px 0; text-align: center; }
+    .field-row { margin-bottom: 16px; }
+    code { background: #f1f1f1; padding: 1px 5px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <div id="login-gate">
+    <p>Checking login&hellip;</p>
+  </div>
+
+  <div id="app" style="display:none;">
+    <h1>Import an article from a Markdown file</h1>
+    <p class="lede">For writing an article somewhere else first (a text editor, another wiki export, etc.) and dropping it straight into Cannapedia, frontmatter and all. This does <strong>not</strong> publish immediately &mdash; it commits to a <code>drafts</code> branch, which gets its own preview so you (or Leo) can check it before it goes live.</p>
+
+    <fieldset>
+      <legend>1. File name</legend>
+      <div class="field-row">
+        <label for="slug-input">Article slug (becomes the URL: /wiki/<span id="slug-preview">your-slug</span>/)</label>
+        <input type="text" id="slug-input" placeholder="e.g. bubble-hash" autocomplete="off">
+        <p class="hint">Auto-filled from a <code>title:</code> line if your pasted text has one -- feel free to edit it.</p>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Content</legend>
+      <div class="field-row">
+        <label for="file-input">Upload a .md file&hellip;</label>
+        <input type="file" id="file-input" accept=".md,.markdown,text/markdown,text/plain">
+      </div>
+      <div class="field-row">
+        <label for="body-input">&hellip;or paste the full file below (must start with a <code>---</code> frontmatter block, same shape as any other Cannapedia article)</label>
+        <textarea id="body-input" spellcheck="false" placeholder="---&#10;title: &quot;Your Article Title&quot;&#10;short_description: &quot;...&quot;&#10;categories:&#10;  - Some Category&#10;status: &quot;Article&quot;&#10;---&#10;Article text starts here..."></textarea>
+      </div>
+    </fieldset>
+
+    <button id="submit-btn" disabled>Commit to drafts branch</button>
+    <div id="status"></div>
+  </div>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    // ---- Configuration -------------------------------------------------
+    // If this ever moves to a different GitHub repo, update these two.
+    var GITHUB_OWNER = "Leo11235";
+    var GITHUB_REPO = "Cannapedia";
+    var DRAFTS_BRANCH = "drafts";
+    var ARTICLES_PATH = "content/articles";
+
+    var loginGate = document.getElementById("login-gate");
+    var app = document.getElementById("app");
+    var slugInput = document.getElementById("slug-input");
+    var slugPreview = document.getElementById("slug-preview");
+    var fileInput = document.getElementById("file-input");
+    var bodyInput = document.getElementById("body-input");
+    var submitBtn = document.getElementById("submit-btn");
+    var statusBox = document.getElementById("status");
+
+    function showStatus(kind, html) {
+      statusBox.className = kind;
+      statusBox.innerHTML = html;
+    }
+
+    function slugify(text) {
+      return text.toLowerCase().trim()
+        .replace(/['"]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    function guessSlugFromContent(text) {
+      var m = text.match(/^title:\s*["']?(.*?)["']?\s*$/m);
+      return m ? slugify(m[1]) : "";
+    }
+
+    function updateSlugPreview() {
+      slugPreview.textContent = slugInput.value.trim() || "your-slug";
+      submitBtn.disabled = !(slugInput.value.trim() && bodyInput.value.trim().startsWith("---"));
+    }
+
+    slugInput.addEventListener("input", updateSlugPreview);
+    bodyInput.addEventListener("input", function () {
+      if (!slugInput.value.trim()) {
+        var guess = guessSlugFromContent(bodyInput.value);
+        if (guess) slugInput.value = guess;
+      }
+      updateSlugPreview();
+    });
+
+    fileInput.addEventListener("change", function () {
+      var file = fileInput.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function () {
+        bodyInput.value = reader.result;
+        if (!slugInput.value.trim()) {
+          var guess = guessSlugFromContent(reader.result) || slugify(file.name.replace(/\.(md|markdown|txt)$/i, ""));
+          slugInput.value = guess;
+        }
+        updateSlugPreview();
+      };
+      reader.readAsText(file);
+    });
+
+    // Encode a JS string to base64 safely, including full Unicode content
+    // (plain btoa() only handles Latin-1 and breaks on curly quotes, etc.)
+    function utf8ToBase64(str) {
+      var bytes = new TextEncoder().encode(str);
+      var binary = "";
+      for (var i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+      return btoa(binary);
+    }
+
+    function gatewayRoot() {
+      return window.location.origin + "/.netlify/git/github/repos/" + GITHUB_OWNER + "/" + GITHUB_REPO;
+    }
+
+    function authHeaders() {
+      var user = window.netlifyIdentity.currentUser();
+      if (!user) return Promise.reject(new Error("Not logged in."));
+      return user.jwt().then(function (token) {
+        return { "Authorization": "Bearer " + token, "Content-Type": "application/json" };
+      });
+    }
+
+    submitBtn.addEventListener("click", function () {
+      var slug = slugify(slugInput.value);
+      var content = bodyInput.value;
+      if (!slug || !content.trim().startsWith("---")) {
+        showStatus("err", "Need a slug and content that starts with a <code>---</code> frontmatter block.");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Committing…";
+      var path = ARTICLES_PATH + "/" + slug + ".md";
+      var contentsUrl = gatewayRoot() + "/contents/" + path;
+
+      authHeaders().then(function (headers) {
+        // Check whether the file already exists on the drafts branch, so
+        // we can send its sha (GitHub requires this for updates) and warn
+        // before silently overwriting something.
+        return fetch(contentsUrl + "?ref=" + DRAFTS_BRANCH, { headers: headers })
+          .then(function (res) { return res.status === 200 ? res.json() : null; })
+          .then(function (existing) {
+            if (existing && !confirm(
+              "content/articles/" + slug + ".md already exists on the drafts branch. Overwrite it?"
+            )) {
+              throw { userCancelled: true };
+            }
+            var body = {
+              message: (existing ? "Update " : "Add ") + slug + " via Markdown import",
+              content: utf8ToBase64(content),
+              branch: DRAFTS_BRANCH,
+            };
+            if (existing) body.sha = existing.sha;
+            return fetch(contentsUrl, {
+              method: "PUT",
+              headers: headers,
+              body: JSON.stringify(body),
+            });
+          });
+      }).then(function (res) {
+        if (!res || !res.ok) {
+          return res ? res.text().then(function (t) { throw new Error(t); }) : null;
+        }
+        var siteHost = window.location.host;
+        var previewHost = DRAFTS_BRANCH + "--" + siteHost;
+        var compareUrl = "https://github.com/" + GITHUB_OWNER + "/" + GITHUB_REPO + "/compare/main..." + DRAFTS_BRANCH + "?expand=1";
+        showStatus("ok",
+          "<strong>Committed to the drafts branch.</strong><br>" +
+          "1. Wait a minute for Netlify to build the preview, then check it: " +
+          "<a href=\"https://" + previewHost + "/wiki/" + slug + "/\" target=\"_blank\">https://" + previewHost + "/wiki/" + slug + "/</a><br>" +
+          "2. If it looks right, publish it by merging this pull request on GitHub: " +
+          "<a href=\"" + compareUrl + "\" target=\"_blank\">Open pull request &amp; merge to publish</a>"
+        );
+        submitBtn.textContent = "Commit to drafts branch";
+        submitBtn.disabled = false;
+      }).catch(function (err) {
+        if (err && err.userCancelled) {
+          showStatus("err", "Cancelled, nothing was changed.");
+        } else {
+          showStatus("err", "Something went wrong: " + (err && err.message ? err.message : err) +
+            "<br>If this keeps happening, double-check Git Gateway is enabled in Netlify's Identity settings.");
+        }
+        submitBtn.textContent = "Commit to drafts branch";
+        submitBtn.disabled = false;
+      });
+    });
+
+    // ---- Auth gate -------------------------------------------------------
+    window.netlifyIdentity.on("init", function (user) {
+      if (user) {
+        loginGate.style.display = "none";
+        app.style.display = "block";
+        updateSlugPreview();
+      } else {
+        loginGate.innerHTML = "<p>You need to be logged in to import an article.</p><button id=\"login-btn\">Log in</button>";
+        document.getElementById("login-btn").addEventListener("click", function () {
+          window.netlifyIdentity.open("login");
+        });
+      }
+    });
+    window.netlifyIdentity.on("login", function () {
+      window.location.reload();
+    });
+    window.netlifyIdentity.init();
+  </script>
+</body>
+</html>
